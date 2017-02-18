@@ -1,0 +1,1998 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="twaranApp">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Twaran'17</title>
+  <meta name="description" content="Twaran'17, National Level Sports Fest, ABV-IIITM">
+  <meta name="keywords" content="Twaran'17, National Level Sports Fest, ABV-IIITM, IIIT Gwalior Sports Fest, Twaran">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:400,300|Raleway:300,400,900,700italic,700,300,600">
+  <link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css">
+  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/animate.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="icon" type="img/ico" href="img/favicon.ico">
+  <style type="text/css">
+    .bgvid{
+      position: fixed; top: 0px; right: 0; bottom: 0;
+      min-width: 100%; min-height: 100%;
+      width: auto; height: auto; z-index:99999999999;
+      background-size: cover;
+    }
+        .imgfit{
+  margin-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 250px;
+  height: 200px;
+}
+#twaran15{
+  width:100%;
+  height:100%;
+}
+
+#imgsize{
+  width: 400px;
+  height: 250px;
+}
+  </style>
+</head>
+
+<body data-spy="scroll" data-target="#myNavbar" ng-controller="RegisterController">
+
+<div id="vid">
+  <video autoplay class="bgvid">
+
+    <source src="twaranvideo.mp4" type="video/mp4">
+    <source src="twaranvideo.webm" type="video/webm">
+   
+    Your browser does not support HTML5 video.
+  </video>
+</div>
+  <!--Registration Modal -->
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <form class="form-horizontal" role="form" ng-submit="addUser()">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color:  #be9e21;">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel" style="text-align: center;;">Registration</h4>
+        </div>
+        <div class="modal-body" style="background-color: #F5F5F5;">
+            <div class="form-group">
+              <label for="sections" class="col-sm-3 control-label">Institute's Name</label>
+              <div class="col-sm-8">
+                <input class="form-control" type="text" name="Institute-name" ng-model="user.institute" required>
+                <span class=" form-control-feedback" aria-hidden="true"></span>
+                <span id="inputDate" class="sr-only">name</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="sections" class="col-sm-3 control-label">Student Name</label>
+              <div class="col-sm-8">
+                <input class="form-control" type="text" name="name" ng-model="user.name" required>
+                <span class=" form-control-feedback" aria-hidden="true"></span>
+                <span id="inputDate" class="sr-only">name</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="sections" class="col-sm-3 control-label">Sports Secretary Name</label>
+              <div class="col-sm-8">
+                <input class="form-control" type="text" name="name" ng-model="user.sName" required>
+                <span class=" form-control-feedback" aria-hidden="true"></span>
+                <span id="inputDate" class="sr-only">name</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="sections" class="col-sm-3 control-label">Faculty In-charge Sports</label>
+              <div class="col-sm-8">
+                <input class="form-control" type="text" name="name" ng-model="user.fname" required>
+                <span class=" form-control-feedback" aria-hidden="true"></span>
+                <span id="inputDate" class="sr-only">name</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="numberOfGuests" class="col-sm-3 control-label">Events for Boys</label>
+              <div class="col-sm-9" name="numberOfGuests">
+                <div class="checkbox col-sm-6">
+                  <label>
+                    <input type="checkbox" name="guestsNumber1" id="guestsNumber1" value="option1" ng-model="checked[0]">Cricket
+                  </label>
+                </div>
+                <div class="checkbox col-sm-6">
+                  <label>
+                    <input type="checkbox" name="guestsNumber2" id="guestsNumber2" value="option2" ng-model="checked[1]">Football
+                  </label>
+                </div>
+                <div class="checkbox  col-sm-6">
+                  <label>
+                    <input type="checkbox" name="guestsNumber3" id="guestsNumber3" value="option3" ng-model="checked[2]">Basketball
+                  </label>
+                </div>
+                <div class="checkbox  col-sm-6">
+                  <label>
+                    <input type="checkbox" name="guestsNumber4" id="guestsNumber4" value="option4" ng-model="checked[3]">Volleyball
+                  </label>
+                </div>
+                <div class="checkbox  col-sm-6">
+                  <label>
+                    <input type="checkbox" name="guestsNumber5" id="guestsNumber5" value="option5" ng-model="checked[4]">Lawn-Tennis
+                  </label>
+                </div>
+                <div class="checkbox  col-sm-6">
+                  <label>
+                    <input type="checkbox" name="guestsNumber6" id="guestsNumber6" value="option6" ng-model="checked[5]">Badminton
+                  </label>
+                </div>
+                <div class="checkbox  col-sm-6">
+                  <label>
+                    <input type="checkbox" name="guestsNumber7" id="guestsNumber7" value="option7" ng-model="checked[6]">Squash
+                  </label>
+                </div>
+                <div class="checkbox  col-sm-6">
+                  <label>
+                    <input type="checkbox" name="guestsNumber8" id="guestsNumber8" value="option8" ng-model="checked[7]">Athletics
+                  </label>
+                </div>
+                <div class="checkbox  col-sm-6">
+                  <label>
+                    <input type="checkbox" name="guestsNumber9" id="guestsNumber9" value="option9" ng-model="checked[8]">Triathlon
+                  </label>
+                </div>
+                <div class="checkbox  col-sm-6">
+                  <label>
+                    <input type="checkbox" name="guestsNumber10" id="guestsNumber10" value="option10" ng-model="checked[9]">Table Tennis
+                  </label>
+                </div>
+                <div class="checkbox  col-sm-6">
+                  <label>
+                    <input type="checkbox" name="guestsNumber11" id="guestsNumber11" value="option11" ng-model="checked[10]">Swimming
+                  </label>
+                </div>
+                <div class="checkbox  col-sm-6">
+                  <label>
+                    <input type="checkbox" name="guestsNumber12" id="guestsNumber12" value="option12" ng-model="checked[11]">Snookers
+                  </label>
+                </div>
+                <div class="checkbox  col-sm-6">
+                  <label>
+                    <input type="checkbox" name="guestsNumber13" id="guestsNumber13" value="option13" ng-model="checked[12]">Carrom-Board
+                  </label>
+                </div>
+                <div class="checkbox  col-sm-6">
+                  <label>
+                    <input type="checkbox" name="guestsNumber14" id="guestsNumber14" value="option14" ng-model="checked[13]">Chess
+                  </label>
+                </div>
+              </div>
+            </div>
+             <div class="form-group">
+              <label for="numberOfGuests" class="col-sm-3 control-label">Events for Girls</label>
+              <div class="col-sm-9" name="numberOfGuests">
+               
+                <div class="checkbox  col-sm-6">
+                  <label>
+                    <input type="checkbox" name="guestsNumber3" id="guestsNumber23" value="option3" ng-model="gchecked[0]">Basketball
+                  </label>
+                </div>
+                <div class="checkbox  col-sm-6">
+                  <label>
+                    <input type="checkbox" name="guestsNumber4" id="guestsNumber24" value="option4" ng-model="gchecked[1]">Volleyball
+                  </label>
+                </div>
+                <div class="checkbox  col-sm-6">
+                  <label>
+                    <input type="checkbox" name="guestsNumber5" id="guestsNumber25" value="option5" ng-model="gchecked[2]">Lawn-Tennis
+                  </label>
+                </div>
+                <div class="checkbox  col-sm-6">
+                  <label>
+                    <input type="checkbox" name="guestsNumber6" id="guestsNumber26" value="option6" ng-model="gchecked[3]">Badminton
+                  </label>
+                </div>
+                <div class="checkbox  col-sm-6">
+                  <label>
+                    <input type="checkbox" name="guestsNumber7" id="guestsNumber27" value="option7" ng-model="gchecked[4]">Squash
+                  </label>
+                </div>
+                <div class="checkbox  col-sm-6">
+                  <label>
+                    <input type="checkbox" name="guestsNumber8" id="guestsNumber28" value="option8" ng-model="gchecked[5]">Athletics
+                  </label>
+                </div>
+                
+                <div class="checkbox  col-sm-6">
+                  <label>
+                    <input type="checkbox" name="guestsNumber10" id="guestsNumber29" value="option10" ng-model="gchecked[6]">Table Tennis
+                  </label>
+                </div>
+                <div class="checkbox  col-sm-6">
+                  <label>
+                    <input type="checkbox" name="guestsNumber11" id="guestsNumber30" value="option11" ng-model="gchecked[7]">Swimming
+                  </label>
+                </div>
+                <div class="checkbox  col-sm-6">
+                  <label>
+                    <input type="checkbox" name="guestsNumber12" id="guestsNumber31" value="option12" ng-model="gchecked[8]">Snookers
+                  </label>
+                </div>
+                <div class="checkbox  col-sm-6">
+                  <label>
+                    <input type="checkbox" name="guestsNumber13" id="guestsNumber32" value="option13" ng-model="gchecked[9]">Carrom-Board
+                  </label>
+                </div>
+                <div class="checkbox  col-sm-6">
+                  <label>
+                    <input type="checkbox" name="guestsNumber14" id="guestsNumber33" value="option14" ng-model="gchecked[10]">Chess
+                  </label>
+                </div>
+              </div>
+            </div>
+           
+            <div class="form-group">
+              <div class="form-group has-feedback">
+                <label for="mobile" class="col-sm-3 control-label">Email-Id</label>
+                <div class="col-sm-8">
+                  <input class="form-control" type="email" name="email" ng-model="user.email" required>
+                  <span class="glyphicon glyphicon-envelope form-control-feedback" aria-hidden="true"></span>
+                  <span id="inputDate" class="sr-only">mail</span>
+                </div>
+              </div>
+            </div>
+             <div class="form-group">
+              <div class="form-group has-feedback">
+                <label for="mobile" class="col-sm-3 control-label"> Faculty In-charge Email-Id</label>
+                <div class="col-sm-8">
+                  <input class="form-control" type="email" name="email" ng-model="user.femail" required>
+                  <span class="glyphicon glyphicon-envelope form-control-feedback" aria-hidden="true"></span>
+                  <span id="inputDate" class="sr-only">mail</span>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="form-group has-feedback">
+                <label for="mobile" class="col-sm-3 control-label">Mobile Number</label>
+                <div class="col-sm-8">
+                  <input class="form-control" type="mobile" name="time" placeholder="Enter 10 digits only" ng-model="user.mobile" required="">
+                  <span class="glyphicon glyphicon-earphone form-control-feedback" aria-hidden="true"></span>
+                  <span id="inputDate" class="sr-only">contact1</span>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="form-group has-feedback">
+                <label for="mobile" class="col-sm-3 control-label">Secretary's Mobile Number</label>
+                <div class="col-sm-8">
+                  <input class="form-control" type="mobile" name="time" placeholder="Enter 10 digit Number" ng-model="user.sMobile">
+                  <span class="glyphicon glyphicon-earphone form-control-feedback" aria-hidden="true"></span>
+                  <span id="inputDate" class="sr-only">contact2</span>
+                </div>
+              </div>
+            </div>
+            
+            <p> ** Fooding and lodging charges should be paid in advance through NEFT</p>
+        <!--    <div ng-show="status">Registration Successful !!</div>   -->
+        </div>
+        <!-- {{checked}} -->
+        <!-- {{user}} -->
+        <div class="modal-footer" style="background-color:  #be9e21;">
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      </form>
+    </div>
+  </div>
+
+  <!--
+    **********************************************************************
+     -->
+  <!--Modal of games-->
+ <!--Modal of games-->
+
+<div class="modal fade" id="cricketrule" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color:  #be9e21;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel" style="text-align: center;;">CRICKET RULES</h4>
+      </div>
+      <div class="modal-body" style="background-color: #F5F5F5;"> 
+    <b>GENERAL RULES</b>
+    <ul style="list-style-type: circle">
+      <li>Teams must arrive at the ground 15 minutes before the scheduled start time.</li>
+      <li>Walkover will be given to a team if the opponent team is not able to reach the ground within 15 minutes of the scheduled time.</li>
+      <li>All teams must get their own kits and shall bear the responsibility of them.</li>
+      <li>Only captain (bowling team) and striker (batting team) can negotiate with umpires during the match in case of disputes and  discrepancies.</li>
+      <li>Points will be deducted for slow over-rate and sledging.</li>
+      <li>All game rules are pertaining to the recent ICC T20 rules.</li>
+      <li>An over rate of 1 over per 4 mins is to be maintained during the match. Penalties shall apply for slow over rates (refer ICC Code of Conduct).</li>
+      <li>No team shall argue with umpires in any case. It could lead to cancellation of team registration and no refunds will be given. It could also attract proper disciplinary actions against the team.</li>
+  </ul>
+
+  <b>FORMAT</b>
+<ul style="list-style-type: circle">
+
+  <li>Group Stage & Semi-Finals – 12 Overs</li>
+  <li>Finals – 20 Overs</li>
+  <li>In case of heavy rain, decision taken by umpires will be considered as final.</li>
+  <li>One point will be added to both teams in case of a tie in group eliminations.</li>
+  <li>Points in group matches are considered in case of a tie in semi-finals.</li>
+  <li>Super over decides the winning team in case of a tie in finals.</li>
+  </ul>
+  <b>PARTICIPATION</b>
+<ul style="list-style-type: circle">
+  <li>Maximum number of players allowed per team is 16.</li>
+  <li>Minimum of 13 players are required per team.</li>
+  </ul>
+  **RULES & SCHEDULE ARE SUBJECT TO CHANGE IN THE SPIRIT OF THE GAME & FESTIVAL AND THE FINAL DECISION RESTS WITH THE TWARAN ORGANIZING TEAM
+      </div>
+      <div class="modal-footer" style="background-color:  #be9e21;">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="footballrule" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color:  #be9e21;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel" style="text-align: center;;">Football RULES</h4>
+      </div>
+      <div class="modal-body" style="background-color: #F5F5F5;"> 
+  <b>  GENERAL RULES</b>
+<ul style="list-style-type: circle">
+  <li>The game will be played according to the usual rules laid down by FIFA.</li>
+  <li>In case teams in a pool end up having same points then ranking will be done according to the goal difference of each team. If still ties exist, then top team is decided by total goals scored between the tied teams.</li>
+  <li>In case of a drawn match in semi – finals and finals, winner will be decided by penalty shootout (no extra time).</li>
+  <li>Referees’ decision is final.</li>
+  <li>Every team should be present at least 20 minutes before the scheduled starting time of the match, failing which a walkover will be given to the opposing team.</li>
+  <li>In case a team gets a walkover, it wins the match by a default 3-0 score, but in case it affects the qualification of other team, the decision will be taken by the event manager and penalties will be played after due consultation with the referees.</li>
+  <li>Each team will be allowed to make a maximum of 3 substitutions per match.</li>
+  <li>A player who receives a red card or two yellow cards in a match will be suspended for the ongoing match as well as next match.</li>
+  <li>A player who picks up yellow cards in two different match will be automatically suspended for the next match.</li>
+  <li>No yellow cards will be carried into the semi-final and (or) final.</li>
+  FOR BOYS
+</ul>
+  <b>Format</b>
+<ul style="list-style-type: circle">
+  <li>60 minutes game (30 minutes half)</li>
+  <li><li>3 teams per pool and top team from each pool will qualify</li>
+  Participation
+  <li>Maximum number of players allowed per team is 18. A minimum of 13 should register to participate.</li>
+  <li>There should be a minimum of 7 players to start the match, or for the match to continue. (if a team gets more than 4 red cards during a match, the opposing team will be declared winner)</li>
+</ul>
+
+
+**RULES & SCHEDULE ARE SUBJECT TO CHANGE IN THE SPIRIT OF THE GAME & FESTIVAL AND THE FINAL DECISION RESTS WITH THE TWARAN ORGANIZING TEAM
+
+
+      </div>
+      <div class="modal-footer" style="background-color:  #be9e21;">
+      
+       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="basketballrules" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color:  #be9e21;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel" style="text-align: center;;">Basketball RULES</h4>
+      </div>
+      <div class="modal-body" style="background-color: #F5F5F5;"> 
+   <b> GENERAL RULES</b>
+<ul style="list-style-type: circle">
+<li>FIBA rules are applicable.</li>
+<li>Teams must report to the basketball court 15 minutes before the scheduled start time, a win to opponent will be offered if failed to do so..</li>
+<li>All the players of a team should have same coloured jersey with printed numbers. It is advisable to keep a jersey of a different colour available if the opposing team happens to have a jersey of same colour as your team..</li>
+<li>Use of abusive of foul language during the play can lead to technical fouls or expulsion depending on the referee and the organisation team..</li>
+<li>No player should wear anything on his/her hand or neck (wrist watch, necklace, ring, “kada”, bracelet, etc.) and nails have to be trimmed, so that players are not hurt during the game..</li>
+</ul>
+<b>FORMAT</b>
+<ul style="list-style-type: circle">
+<li>Boys - Matches will have normal 4 quarters with 10 minutes for each quarter (unless otherwise stated).</li>
+<li>Girls - Matches will have normal 4 quarters with 7 minutes for each quarter (unless otherwise stated)..</li>
+</ul>
+<b>PARTICIPATION</b>
+<ul style="list-style-type: circle">
+<li>Maximum 12 players are allowed in a team.</li>
+<li>No member of the team should be aged 25 years or more as on the first day of the tournament.</li>
+</ul>
+**RULES & SCHEDULE ARE SUBJECT TO CHANGE IN THE SPIRIT OF THE GAME & FESTIVAL AND THE FINAL DECISION RESTS WITH THE TWARAN ORGANIZING TEAM
+
+      </div>z
+      <div class="modal-footer" style="background-color:  #be9e21;">
+      
+       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="volleyballrules" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color:  #be9e21;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel" style="text-align: center;;">Volleyball RULES</h4>
+      </div>
+      <div class="modal-body" style="background-color: #F5F5F5;"> 
+   <b> GENERAL RULES</b>
+<ul  style="list-style-type: circle">
+<li>FIVB rules 2013 applicable.</li>
+<li>Teams must report to the volleyball court 15 minutes before the scheduled start time, a win to opponent will be offered if failed to do so.</li>
+<li>All the players of a team should have same coloured jersey with printed numbers. It is advisable to keep a jersey of a different colour available if the opposing team happens to have a jersey of same colour as your team.</li>
+<li>Use of abusive of foul language during the play can lead to technical fouls or expulsion depending on the referee and the organisation team.</li>
+</ul>
+<b>FORMAT</b>
+<ul  style="list-style-type: circle">
+<li>Matches will have 3 sets, each set of 25 points and the final set being of 15 points (unless otherwise stated).</li>
+</ul>
+<b>PARTICIPATION </b>
+<ul  style="list-style-type: circle">
+<li>Maximum 12 players are allowed in a team.</li>
+<li>No member of the team should be aged 25 years or more as on the first day of the tournament.</li>
+</ul>
+**RULES & SCHEDULE ARE SUBJECT TO CHANGE IN THE SPIRIT OF THE GAME & FESTIVAL AND THE FINAL DECISION RESTS WITH THE TWARAN ORGANIZING TEAM
+      </div>
+      <div class="modal-footer" style="background-color:  #be9e21;">
+      
+       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="lawntennisrules" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color:  #be9e21;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel" style="text-align: center;;">Lawn-Tennis RULES</h4>
+      </div>
+      <div class="modal-body" style="background-color: #F5F5F5;"> 
+    <b>GENERAL RULES </b>
+    <ul  style="list-style-type: circle">
+		<li>Matches will be conducted as per international rules.</li>
+		<li>Event Manager has the power to make some last moment changes if necessary.</li>
+		<li>Use of abusive of foul language during the play can lead to technical fouls or expulsion depending on the referee and the organisation team.</li>
+		<li>Teams must arrive at the court 20 minutes before the scheduled start time.</li>
+		<li>Walkover will be given to a team if the opponent team is not able to reach the ground within 15 minutes of the scheduled time.</li>
+	</ul>
+	<b>FORMAT </b>
+	<ul  style="list-style-type: circle">
+		<li>The Davis Cup format is followed with slight changes. (Three matches at Max)</li>
+		<li>There are 2 single rubbers and 1 double rubber. The double acts as the deciding rubber.</li>
+		<li>The team to win first 2 matches win.</li>
+		<li>There will be single set matches until semi-finals after which best of 3 settlers (Event Manager reserves the right to change the format)</li>
+	</ul>
+	<b>PARTICIPATION </b>
+	<ul  style="list-style-type: circle">
+		<li>Maximum of 1 team per college.</li>
+		<li>ABV-IIITM Gwalior can have maximum 2 teams, Team A & B.</li>
+	</ul>
+		<li>Each team must consist of a minimum of 2 and maximum of 4 players.</li>
+	**RULES & SCHEDULE ARE SUBJECT TO CHANGE IN THE SPIRIT OF THE GAME & FESTIVAL AND THE FINAL DECISION RESTS WITH THE TWARAN ORGANIZING TEAM
+
+      </div>
+      <div class="modal-footer" style="background-color:  #be9e21;">
+      
+       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="swimming-rules" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color:  #be9e21;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel" style="text-align: center;;">Swimming RULES</h4>
+      </div>
+      <div class="modal-body" style="background-color: #F5F5F5;"> 
+      <b>  GENERAL RULES</b>
+    <ul style="list-style-type: circle">
+        <li>All events will be played at ABV-IIITM’s swimming pool.</li>
+        <li>A warming-up session of 5 minutes will be given before the start of events.</li>
+        <li>Teams must arrive at the pool 20 minutes before the scheduled start time.</li>
+        <li>In the event of disputes, the decision of the referee is final and binding.</li>
+      <li>FINA rules will be followed.</li>
+        
+    </ul>
+    <b>FORMAT</b>
+    <ul>
+      <li>Four strokes: freestyle, backstroke, breaststroke, and butterfly will be organized.</li>
+      <li>Individual medley event and team relay event.</li>
+      <li>One team per institute is allowed.</li>
+    </ul>
+
+      **RULES & SCHEDULE ARE SUBJECT TO CHANGE IN THE SPIRIT OF THE GAME & FESTIVAL AND THE FINAL DECISION RESTS WITH THE TWARAN ORGANIZING TEAM
+
+
+    </div>
+        <div class="modal-footer" style="background-color:  #be9e21;">
+      
+       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="snooker-rules" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color:  #be9e21;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel" style="text-align: center;;">Snooker RULES</h4>
+      </div>
+      <div class="modal-body" style="background-color: #F5F5F5;"> 
+      <b> GENERAL RULES</b>
+      <ul style="list-style-type: circle">
+        <li>No college shall be allowed to register more than one team in the competition except the home team.</li>
+        <li>﻿The rules of the  International Billiards and Snooker Federation as adopted from time to time shall be followed unless otherwise modified.</li>
+        <li>Unruly behaviour of the student members of any team member shall be generally dealt with suitable punishment </li>
+        <li>All teams must report at least 15 minutes before their scheduled matches else the opposition team will be declared winner by walkover..</li>
+        <li>The Organizing committee reserves the right to alternate scheduled program under unusual circumstances.</li>
+      </ul>
+
+      <b>PARTICIPATION</b>
+      <ul style="list-style-type: circle">
+        <li>In a match, each player will play one frame against the other players in the opposing team</li>
+        <li>Fouls will be scored as per normal rules.</li>
+        <li>Anyone found misbehaving or contradicting the referee will be liable for disqualification.</li>
+      </ul>
+      **RULES & SCHEDULE ARE SUBJECT TO CHANGE IN THE SPIRIT OF THE GAME & FESTIVAL AND THE FINAL DECISION RESTS WITH THE TWARAN ORGANIZING TEAM
+
+      </div>
+      <div class="modal-footer" style="background-color:  #be9e21;">
+      
+       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="gamingrules" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color:  #be9e21;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel" style="text-align: center;;">Snooker RULES</h4>
+      </div>
+      <div class="modal-body" style="background-color: #F5F5F5;"> 
+      <b>  GENERAL RULES</b>
+    <ul style="list-style-type: circle">
+        <li>Each team should consist of 5 members.</li>
+        <li>The encounter will take place in competitive mode (15 rounds per side (CT/T)).</li>
+        <li>The Map pool for the event comprises of: de_dust2, de_mirage, de_cache, de_cobblestone, de_overpass, de_train and de_nuke.</li>
+        <li>Group stage matches will be Best of 1 (Bo1) and elimination matches will be Bo3.</li>
+      <li>For Bo1, the veto process for choosing map is as follows:
+          Team A removes map1. 
+          Team B removes map2.
+          Team A removes map3. 
+          Team B removes map4.
+          Team A removes map5. 
+          Team B removes map6.
+          The leftover map will be played.</li>
+        <li>For Bo3, the veto process will be:
+          Team A removes map1. 
+          Team B removes map2.
+          Team A picks map3.
+          Team B picks map4.
+          Team A removes map5. 
+          Team B removes map6.
+          The leftover map (map7) will be played if necessary.</li>
+        <li>The winner of the knife round in the beginning will get to decide the side (CT/T) they want to play first.</li>
+        <li>You can bring your own mouse, mousepad, keyboard, headphones if you want to. PCs will be provided.</li>
+        <li>The administration team reserves the right to overrule any pre-stated tournament rules at any given point if deemed necessary.</li>
+
+
+      **RULES & SCHEDULE ARE SUBJECT TO CHANGE IN THE SPIRIT OF THE GAME & FESTIVAL AND THE FINAL DECISION RESTS WITH THE TWARAN ORGANIZING TEAM
+
+
+    </div>
+        <div class="modal-footer" style="background-color:  #be9e21;">
+      
+       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="tabletennisrules" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color:  #be9e21;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel" style="text-align: center;;">Table-Tennis RULES</h4>
+      </div>
+      <div class="modal-body" style="background-color: #F5F5F5;"> 
+     <b> GENERAL RULES</b>
+	<ul  style="list-style-type: circle">
+	    <li>Matches will be conducted as per standard ITTF rules and regulations.</li>
+		<li>Apart from the teams offbeat events such as singles, doubles and shuffle will be held depending on the time available.</li>
+		<li>Use of abusive of foul language during the play can lead to technical fouls or expulsion depending on the referee and the organisation team.</li>
+		<li>Teams must arrive in the TT room 20 minutes before the scheduled start time.
+		<li>Walkover will be given to a team if the opponent team is not able to reach the venue within 15 minutes of the scheduled time.</li>
+	</ul>
+	<b>FORMAT</b>
+	<ul  style="list-style-type: circle">
+		<li>Team matches will be held in ABC – XYZ format. There won’t be any doubles match in the team’s event. The order in which the matches will be held as follows:
+		Order Type  ABC team  XYZ team
+		1 Singles A X
+		2 Singles B Y
+		3 Singles C Z
+		4 Singles A Y
+		5 Singles B X
+		</li>
+		<li>Every individual match in the league stage will be best of 3 games with 11 points in every game. For the knockout stage the individual matches will be best of 5 games with 11 points in every game.</li>
+	</ul>
+	<b>PARTICIPATION</b>
+	<ul  style="list-style-type: circle">
+		<li>Each team must consist of a minimum of 3 and maximum of 5 players.</li>
+	</ul>
+	**RULES & SCHEDULE ARE SUBJECT TO CHANGE IN THE SPIRIT OF THE GAME & FESTIVAL AND THE FINAL DECISION RESTS WITH THE TWARAN ORGANIZING TEAM
+
+
+      </div>
+      <div class="modal-footer" style="background-color:  #be9e21;">
+      
+       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal fade" id="squashrules" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color:  #be9e21;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel" style="text-align: center;;">SQUASH RULES</h4>
+      </div>
+      <div class="modal-body" style="background-color: #F5F5F5;"> 
+   <b> GENERAL RULES</b>
+	<ul  style="list-style-type: circle">
+		<li>All games will be played by Dunlop Pro Double Dot Ball, the official ball for PSA.</li>
+		<li>Immediately preceding the start of play, a period not exceeding five minutes shall be allowed on court for the purpose of warming-up.</li>
+		<li>Teams must arrive at the court 20 minutes before the scheduled start time.</li>
+		<li>Walkover will be given to a team if the opponent team is not able to reach the ground within 15 minutes of the scheduled time.</li>
+		<li>Players must wear shoes with non-marking soles and the use of approved eye protection is mandatory.</li>
+		<li>In the event of disputes, the decision of the referee is final and binding.</li>
+	</ul>
+	<b>FORMAT </b>
+	<ul  style="list-style-type: circle">
+		<li>WSF rules will be followed.</li>
+		<li>A match between 2 teams would comprise of 5 games (4 singles + 1 doubles).</li>
+		
+	</ul>
+	<b>PARTICIPATION </b>
+	<ul  style="list-style-type: circle">
+		<li>Each team must consist of Minimum of 3 players & Maximum 5 players.</li>
+	</ul>
+	**RULES & SCHEDULE ARE SUBJECT TO CHANGE IN THE SPIRIT OF THE GAME & FESTIVAL AND THE FINAL DECISION RESTS WITH THE TWARAN ORGANIZING TEAM
+
+
+      </div>
+      <div class="modal-footer" style="background-color:  #be9e21;">
+      
+       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="modal fade" id="carromrules" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color:  #be9e21;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel" style="text-align: center;;">Carrom RULES</h4>
+      </div>
+      <div class="modal-body" style="background-color: #F5F5F5;"> 
+   <b> GENERAL RULES </b>
+	<ul  style="list-style-type: circle">
+		<li>The participants will be made familiar with the rules before the start of the tournament by referee.</li>
+		<li>Any hand may be used in play. Participants can change hand during the game.</li>
+		<li>Use of Thumb/Back-Shot will not be allowed.</li>
+		
+		<li>Standard Carrom rules will be followed.</li>
+		<li>Rules with regard to equipment to be used:</li>
+		<li>Standard carrom board with stand, chair and light will be provided</li>
+		<li>Standard carrom men and powder will be provided</li>
+		<li>Although participant should bring his/her own striker.</li>
+		<li>Teams must arrive in the carrom room 15 minutes before the scheduled start time, a win to opponent will be offered if failed to do so.</li>
+	</ul>
+	<b>FORMAT </b>
+	<ul  style="list-style-type: circle">
+		<li>A game shall be of 25 points or eight boards. The player/team that reaches 25 points first or leads at the conclusion of eighth board shall be the winner of the game.</li>
+		<li>Best of three will be considered out of two singles and one doubles match played between any two teams.</li>
+	</ul>
+	<b>PARTICIPATION </b>
+	<ul  style="list-style-type: circle">
+		<li>Maximum of 2 teams per college.</li>
+		<li>Each team must consist of a minimum of 2 and maximum of 4 players.</li>
+		<li>An individual can participate in not more than one singles and one doubles match.</li>
+	</ul>
+	**RULES & SCHEDULE ARE SUBJECT TO CHANGE IN THE SPIRIT OF THE GAME & FESTIVAL AND THE FINAL DECISION RESTS WITH THE TWARAN ORGANIZING TEAM
+
+      </div>
+      <div class="modal-footer" style="background-color:  #be9e21;">
+      
+       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="trit-rules" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color:  #be9e21;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel" style="text-align: center;;">Triathlon RULES</h4>
+      </div>
+      <div class="modal-body" style="background-color: #F5F5F5;"> 
+      <b>  GENERAL RULES</b>
+    <ul style="list-style-type: circle">
+        <li>All players should come in proper kits (Shorts, T-Shirts, swimming suit)</li>
+        <li>The competition shall be conducted under the Indian Triathlon Federation Rules with slight modifications.</li>
+        <li>Use of abusive of foul language during the play can lead to technical fouls or expulsion depending on the referee and the organisation team.</li>
+        <li>In the event of disputes, the decision of the referee is final and binding.</li>
+      <li>The Organizing committee reserves the right to alternate scheduled program under unusual circumstances.</li>
+        
+    </ul>
+    <b>PARTICIPATION</b>
+    <ul>
+      <li>Maximum of two atheletes per institute will be allowed to participate in the event.</li>
+      <li>The order of execution of events will be swimming followed by cycling followed by running.</li>
+      <li>An athlete must complete all the previous events before moving on to the next event.</li>
+    </ul>
+
+      **RULES & SCHEDULE ARE SUBJECT TO CHANGE IN THE SPIRIT OF THE GAME & FESTIVAL AND THE FINAL DECISION RESTS WITH THE TWARAN ORGANIZING TEAM
+
+
+    </div>
+        <div class="modal-footer" style="background-color:  #be9e21;">
+      
+       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="chessrules" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color:  #be9e21;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel" style="text-align: center;;">Chess RULES</h4>
+      </div>
+      <div class="modal-body" style="background-color: #F5F5F5;"> 
+      <b>GENERAL RULES</b>
+      <ul style="list-style-type: circle">
+    	<li>Standard FIDE Touch and Move rules are applicable.</li>
+		<li>For complete set of rules, please read the FIDE International Rulebook.</li>
+		<li>The boards and clocks will be provided at the tournament hall for the event.</li>
+		<li>Teams must arrive at the venue 15 minutes before the scheduled start time, a win to opponent will be offered if failed to do so.</li>
+	</ul>
+	<b>FORMAT </b>
+ 	<ul style="list-style-type: circle">
+		<li>Each player gets 1 point for a win, ½ point for a draw and 0 point for loss.</li>
+		<li>The total points of all the players will be added after the round to get the total points of the team.</li>
+		<li>The team with greater number of total points will be declared the winner in that round and be given 2 points; the losing team will get 0 points. In case of a tie, 1 point each will be given to both the teams.</li>
+		<li>Time Control: 90 minutes + Increment (Maybe changed by the arbiter before the event starts).</li>
+	</ul>
+	<b>PARTICIPATION </b>
+ 	<ul style="list-style-type: circle">
+		<li>Maximum of 2 teams per college. (Team A and Team B)</li>
+	</ul>
+	**RULES & SCHEDULE ARE SUBJECT TO CHANGE IN THE SPIRIT OF THE GAME & FESTIVAL AND THE FINAL DECISION RESTS WITH THE TWARAN ORGANIZING TEAM
+
+      </div>
+      <div class="modal-footer" style="background-color:  #be9e21;">
+      
+       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="badmintonrules" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color:  #be9e21;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel" style="text-align: center;;">Badminton RULES</h4>
+      </div>
+      <div class="modal-body" style="background-color: #F5F5F5;"> 
+      <b>GENERAL RULES</b>
+	<ul style="list-style-type: circle">
+		<li>All players should come in proper kits (Shorts, T-Shirts)</li>
+		<li>Players should have clean shoes (Non Marking) and should be used only on the court. (Shoes should be changed only on arriving at the court)</li>
+		<li>All the rules apart from mentioned are according to the World Badminton Federation’s rule book</li>
+		<li>Use of abusive of foul language during the play can lead to technical fouls or expulsion depending on the referee and the organisation team.</li>
+		<li>Teams must arrive at the court 20 minutes before the scheduled start time.</li>
+		<li>Walkover will be given to a team if the opponent team is not able to reach the ground within 15 minutes of the scheduled time.</li>
+	</ul>
+	<b>FORMAT</b>
+	<ul style="list-style-type: circle">
+		<li>Each Clash (between teams) will have 5 matches for MEN and 3 matches for WOMEN
+		<b>ORDER:</b>
+		MEN – 1st singles, 2nd singles, 1st doubles, 3rd singles, 2nd doubles
+		WOMEN – 1st singles, 1st doubles, 2nd singles</li>
+	</ul>
+	<b>PARTICIPATION</b>
+	<ul style="list-style-type: circle">
+		<li>Maximum of 1 team per college</li>
+		<li>Each team must consist of a minimum of 4 and maximum of 5 players in a men’s team and a minimum of 2 and maximum of 4 players in a women’s team.</li>
+		<li>A player can play a maximum of two matches that is 1 singles and 1 doubles.</li>
+	</ul>
+	**RULES & SCHEDULE ARE SUBJECT TO CHANGE IN THE SPIRIT OF THE GAME & FESTIVAL AND THE FINAL DECISION RESTS WITH THE TWARAN ORGANIZING TEAM
+
+      </div>
+      <div class="modal-footer" style="background-color:  #be9e21;">
+      
+       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="Athleticsrules" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color:  #be9e21;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel" style="text-align: center;;">Athletics RULES</h4>
+      </div>
+      <div class="modal-body" style="background-color: #F5F5F5;"> 
+    	<b>GENERAL RULES</b>
+		<ul style="list-style-type: circle">
+			<li>All players should come in proper kits (Shorts, T-Shirts)</li>
+			<li>﻿The competition shall be conducted under the International Athletics Federation Rules as adopted from time to time by AFI unless otherwise modified in these rules.</li>
+			<li>Use of abusive of foul language during the play can lead to technical fouls or expulsion depending on the referee and the organisation team.</li>
+			<li>Teams must arrive at the field 20 minutes before the scheduled start time.</li>
+			<li>The Organizing committee reserves the right to alternate scheduled program under unusual circumstances.</li>
+		</ul>
+
+		<b>PARTICIPATION</b>
+		<ul style="list-style-type: circle">
+			<li>Maximum of 1 team per college</li>
+			<li>Except for Relay races, each college is entitled to enter not more than two competitors. For relay races, not more than one entry of four with one reserve shall be accepted.</li>
+			<li>An athlete can participate in a maximum of two events, excluding relays and marathon.</li>
+		</ul>
+		**RULES & SCHEDULE ARE SUBJECT TO CHANGE IN THE SPIRIT OF THE GAME & FESTIVAL AND THE FINAL DECISION RESTS WITH THE TWARAN ORGANIZING TEAM
+
+      </div>
+      <div class="modal-footer" style="background-color:  #be9e21;">
+      
+       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       
+      </div>
+    </div>
+  </div>
+</div>
+  <!--Main Content -->
+  <div class="loader"></div>
+  <div id="myDiv" style="display:none">
+    <!--HEADER-->
+    <div class="header">
+      <div class="bg-color">
+        <header id="main-header">
+          <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Twaran<span class="logo-dec">'17</span></a>
+              </div>
+              <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                  <li class="active"><a href="#main-header">Home</a></li>
+                  <li class=""><a href="#service">About</a></li>
+                  <li class=""><a href="#portfolio">Events</a></li>
+                  <li class=""><a href="#gallery">Gallery</a></li>
+                  <li class=""><a href="#blog">Team</a></li>
+                  <li class=""><a href="#contact">Contact Us</a></li>
+                  <li class=""><a href="#" data-toggle="modal" data-target="#myModal" style="color:#be9e21; ">Register now</a></li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </header>
+        <div class="wrapper">
+          <div class="container">
+            <div class="row">
+              <div class="banner-info text-center wow fadeIn delay-05s">
+                <h2 class="bnr-sub-title" style=" padding-top:130px; padding-bottom: 0px;">TWARAN<span class="logo-dec">'17</h2>
+                <p class="bnr-para"> <h4>STEP UP THE GAME <br><br> 31<sup>st</sup> March - 2<sup>nd</sup> April</h4></p>
+                <div class="brn-btn">
+                  <a href="#" class="btn btn-download" data-toggle="modal" data-target="#myModal">Register now!</a>
+                </div>
+                <div class="overlay-detail">
+                  <a href="#feature"><i class="fa fa-angle-down"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--
+    **********************************************************************
+     -->
+    <!--/ HEADER-->
+    <!---->
+
+    <section id="service" class="section-padding wow fadeInUp delay-05s">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h2 class="service-title pad-bt15">About Twaran'17</h2>
+            <hr style="height: 3px; width: 390px; background-color: #BE9E21;">
+            <p class="sub-title pad-bt15">"The roar of the champions and the cheer of the audience”-are what we get to hear
+              <br> in the season of Spring embarking the start of our NATIONAL SPORTS FEST “TWARAN”.</p>
+          </div>
+          <div class="col-md-12" style="text-align: center;">
+            Twaran is a 4 day extravaganza of sports held under the flag of ABV-IIITM to provide a platform for students from institutes all over the country to exhibit their marvellous talent and skills by competing with the best upcoming sports persons in the country in a superbly charged and competitive ambience with state-of-art sports facilities.
+            <br>
+            <br>
+            <p style="text-align: center;"><strong>“Success isn’t given. It’s Earned.
+              <br> On the track, on the field, In the Gym.
+              <br> With Blood, Sweat, And the occasional Tear.”</strong></p>
+            <br> Let’s play to strengthen our bonds, to become a symbol of friendship and unity, to witness those heart stopping crucial moments of the game and most importantly let’s play to increase the mutual understanding and to foster cooperation level among various institutes so that we stand together united.
+            <br> A majority of the games are held under floodlights including basketball, volleyball, table tennis and badminton. Several others like cricket, football, lawn tennis take place on the lush green fields during the day. Informal events like carom, chess and marathon add exuberance to the heated environment of Twaran.
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!--
+    **********************************************************************
+ -->
+
+    <!-- About Ends here-->
+    <section id="testimonial" class="wow fadeInUp delay-05s">
+      <div class="container section-padding">
+        <div class="row">
+          <br>
+          <h1 style="text-align: center;"><span style="color: white;">"STEP UP THE</span> <span style="color: orange;">GAME"</span></h1>
+        </div>
+        <br>
+        <h3 style="text-align: center; color: #F0FFF0;">You have competition every day because you set such high standards for yourself that you have to go out every day and live up to that.</h3>
+      </div>
+    </section>
+    <!---->
+    <!---->
+    <!--
+    **********************************************************************
+     -->
+    <!---->
+    <!---->
+    <section id="portfolio" class="section-padding wow fadeInUp delay-05s">
+      <div class="container">
+        <div class="col-md-12 text-center">
+          <h2 class="service-title pad-bt15">Events</h2>
+          <hr class="bottom-line" style="width: 160px;">
+        </div>
+        <div class="row">
+          <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item padding-right-zero mr-btn-15">
+            <div class="hovereffect">
+              <img src="img/cricket 2.jpg" class="img-responsive">
+              <div class="overlay">
+                <h2>Cricket</h2>
+                <a href="#" class="info" data-toggle="modal" data-target="#cricketrule">Show More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item padding-right-zero mr-btn-15">
+            <div class="hovereffect">
+              <img src="img/football.jpg" class="img-responsive">
+              <div class="overlay">
+                <h2>Football</h2>
+                <a href="#" class="info" data-toggle="modal" data-target="#footballrule">Show More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item padding-right-zero mr-btn-15">
+            <div class="hovereffect">
+              <img src="img/baski1.jpg" class="img-responsive">
+              <div class="overlay">
+                <h2>Basketball</h2>
+                <a href="#" class="info" data-toggle="modal" data-target="#basketballrules">Show More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item padding-right-zero mr-btn-15">
+            <div class="hovereffect">
+              <img src="img/baddy.jpg" class="img-responsive">
+              <div class="overlay">
+                <h2>Badminton</h2>
+                <a href="#" class="info" data-toggle="modal" data-target="#badmintonrules">Show More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item padding-right-zero mr-btn-15">
+            <div class="hovereffect">
+              <img src="img/lawntennis.jpg" class="img-responsive">
+              <div class="overlay">
+                <h2>Lawn-Tennis</h2>
+                <a href="#" class="info" data-toggle="modal" data-target="#lawntennisrules">Show More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item padding-right-zero mr-btn-15">
+            <div class="hovereffect">
+              <img src="img/athletics2.jpg" class="img-responsive">
+              <div class="overlay">
+                <h2>Athletics</h2>
+                <a href="#" class="info" data-toggle="modal" data-target="#Athleticsrules"> Show More </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item padding-right-zero mr-btn-15">
+            <div class="hovereffect">
+              <img src="img/tt.jpg" class="img-responsive">
+              <div class="overlay">
+                <h2>Tabel Tennis</h2>
+                <a href="#" class="info" data-toggle="modal" data-target="#tabletennisrules">Show More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item padding-right-zero mr-btn-15">
+            <div class="hovereffect">
+              <img src="img/squash.jpg" class="img-responsive">
+              <div class="overlay">
+                <h2>Squash</h2>
+                <a href="#" class="info" data-toggle="modal" data-target="#squashrules">Show More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item padding-right-zero mr-btn-15">
+            <div class="hovereffect">
+              <img src="img/swimming.jpg" class="img-responsive">
+              <div class="overlay">
+                <h2>Swimming</h2>
+                <a href="#" class="info" data-toggle="modal" data-target="#swimming-rules"> Show More </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item padding-right-zero mr-btn-15">
+            <div class="hovereffect">
+              <img src="img/volley.jpg" class="img-responsive">
+              <div class="overlay">
+                <h2>Volley Ball</h2>
+                <a href="#" class="info" data-toggle="modal" data-target="#volleyballrules">Show More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item padding-right-zero mr-btn-15">
+            <div class="hovereffect">
+              <img src="img/trit.jpg" class="img-responsive">
+              <div class="overlay">
+                <h2>Triathlon</h2>
+                <a href="#" class="info" data-toggle="modal" data-target="#trit-rules"> Show More </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item padding-right-zero mr-btn-15">
+            <div class="hovereffect">
+              <img src="img/snooker.jpg" class="img-responsive">
+              <div class="overlay">
+                <h2>Snookers</h2>
+                <a href="#" class="info" data-toggle="modal" data-target="#snooker-rules"> Show More </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item padding-right-zero mr-btn-15">
+            <div class="hovereffect">
+              <img src="img/chess.jpg" class="img-responsive">
+              <div class="overlay">
+                <h2>Chess</h2>
+                <a href="#" class="info" data-toggle="modal" data-target="#chessrules">Show More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item padding-right-zero mr-btn-15">
+            <div class="hovereffect">
+              <img src="img/online.jpg" class="img-responsive">
+              <div class="overlay">
+                <h2>Gaming</h2>
+                <a href="#" class="info" data-toggle="modal" data-target="#gamingrules"> Show More </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item padding-right-zero mr-btn-15">
+            <div class="hovereffect">
+              <img src="img/carrom.jpg" class="img-responsive">
+              <div class="overlay">
+                <h2>Carrom</h2>
+                <a href="#" class="info" data-toggle="modal" data-target="#carromrules">Show More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!---->
+    <!--
+    **********************************************************************
+     -->
+       
+     <section id="gallery" class="section-padding wow fadeInUp delay-05s">
+   <div class="col-md-12 text-center">
+            <h2 class="service-title pad-bt15">Gallery</h2>
+            <hr class="bottom-line">
+          </div>
+    
+    <style>
+        
+        .jssora05l, .jssora05r {
+            display: block;
+            position: absolute;
+            /* size of arrow element */
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            background: url('img/a17.png') no-repeat;
+            overflow: hidden;
+        }
+        .jssora05l { background-position: -10px -40px; }
+        .jssora05r { background-position: -70px -40px; }
+        .jssora05l:hover { background-position: -130px -40px; }
+        .jssora05r:hover { background-position: -190px -40px; }
+        .jssora05l.jssora05ldn { background-position: -250px -40px; }
+        .jssora05r.jssora05rdn { background-position: -310px -40px; }
+        .jssora05l.jssora05lds { background-position: -10px -40px; opacity: .3; pointer-events: none; }
+        .jssora05r.jssora05rds { background-position: -70px -40px; opacity: .3; pointer-events: none; }
+        /* jssor slider thumbnail navigator skin 01 css *//*.jssort01 .p            (normal).jssort01 .p:hover      (normal mouseover).jssort01 .p.pav        (active).jssort01 .p.pdn        (mousedown)*/.jssort01 .p {    position: absolute;    top: 0;    left: 0;    width: 72px;    height: 72px;}.jssort01 .t {    position: absolute;    top: 0;    left: 0;    width: 100%;    height: 100%;    border: none;}.jssort01 .w {    position: absolute;    top: 0px;    left: 0px;    width: 100%;    height: 100%;}.jssort01 .c {    position: absolute;    top: 0px;    left: 0px;    width: 68px;    height: 68px;    border: #000 2px solid;    box-sizing: content-box;    background: url('img/t01.png') -800px -800px no-repeat;    _background: none;}.jssort01 .pav .c {    top: 2px;    _top: 0px;    left: 2px;    _left: 0px;    width: 68px;    height: 68px;    border: #000 0px solid;    _border: #fff 2px solid;    background-position: 50% 50%;}.jssort01 .p:hover .c {    top: 0px;    left: 0px;    width: 70px;    height: 70px;    border: #fff 1px solid;    background-position: 50% 50%;}.jssort01 .p.pdn .c {    background-position: 50% 50%;    width: 68px;    height: 68px;    border: #000 2px solid;}* html .jssort01 .c, * html .jssort01 .pdn .c, * html .jssort01 .pav .c {    /* ie quirks mode adjust */    width /**/: 72px;    height /**/: 72px;}
+    </style>
+
+    <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:800px;height:456px;overflow:hidden;visibility:hidden;background-color:#24262e;">
+        <!-- Loading Screen -->
+        <div data-u="loading" style="position:absolute;top:0px;left:0px;background-color:rgba(0,0,0,0.7);">
+            <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
+           
+        </div>
+        <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:800px;height:356px;overflow:hidden;">
+            <div>
+                <img data-u="image" src="img/1.jpg" />
+                <img data-u="thumb" src="img/1.jpg" />
+            </div>
+            <div>
+                <img data-u="image" src="img/2.jpg" />
+                <img data-u="thumb" src="img/2.jpg" />
+            </div>
+            <div>
+                <img data-u="image" src="img/3.jpg" />
+                <img data-u="thumb" src="img/3.jpg" />
+            </div>
+            <div>
+                <img data-u="image" src="img/4.jpg" />
+                <img data-u="thumb" src="img/4.jpg" />
+            </div>
+            <div>
+                <img data-u="image" src="img/5.jpg" />
+                <img data-u="thumb" src="img/5.jpg" />
+            </div>
+            <div>
+                <img data-u="image" src="img/6.jpg" />
+                <img data-u="thumb" src="img/6.jpg" />
+            </div>
+            <div>
+                <img data-u="image" src="img/7.jpg" />
+                <img data-u="thumb" src="img/7.jpg" />
+            </div>
+            <a data-u="any" href="http://www.jssor.com" style="display:none">Image Gallery</a>
+            <div>
+                <img data-u="image" src="img/8.jpg" />
+                <img data-u="thumb" src="img/8.jpg" />
+            </div>
+            <div>
+                <img data-u="image" src="img/9.jpg" />
+                <img data-u="thumb" src="img/9.jpg" />
+            </div>
+            <div>
+                <img data-u="image" src="img/10.jpg" />
+                <img data-u="thumb" src="img/10.jpg" />
+            </div>
+            <div>
+                <img data-u="image" src="img/11.jpg" />
+                <img data-u="thumb" src="img/11.jpg" />
+            </div>
+            <div>
+                <img data-u="image" src="img/12.jpg" />
+                <img data-u="thumb" src="img/12.jpg" />
+            </div>
+        </div>
+        <!-- Thumbnail Navigator -->
+        <div data-u="thumbnavigator" class="jssort01" style="position:absolute;left:0px;bottom:0px;width:800px;height:100px;" data-autocenter="1">
+            <!-- Thumbnail Item Skin Begin -->
+            <div data-u="slides" style="cursor: default;">
+                <div data-u="prototype" class="p">
+                    <div class="w">
+                        <div data-u="thumbnailtemplate" class="t"></div>
+                    </div>
+                    <div class="c"></div>
+                </div>
+            </div>
+            <!-- Thumbnail Item Skin End -->
+        </div>
+        <!-- Arrow Navigator -->
+        <span data-u="arrowleft" class="jssora05l" style="top:158px;left:8px;width:40px;height:40px;"></span>
+        <span data-u="arrowright" class="jssora05r" style="top:158px;right:8px;width:40px;height:40px;"></span>
+    </div>
+    </section>
+  
+    <!---->
+    <!---->
+    <section id="blog" class="section-padding wow fadeInUp delay-05s">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h2 class="service-title pad-bt15">Coordinators</h2>
+            <br>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="blog-sec">
+              <div class="blog-img">
+                <a href="">
+                  <img src="img/rahul.jpg" class="imgresponsive">
+                </a>
+              </div>
+              <div class="blog-info">
+                <h2>Rahul Yadav</h2>
+                <div class="blog-comment">
+                  <h5>7049570963</h5>
+                  <h5><a target="_blank" href="https://www.facebook.com/rahulyadav1463"><i class="fa fa-facebook-square fa-2x " style="color: #be9e21;" aria-hidden="true"></i></a> &nbsp; &nbsp; &nbsp; &nbsp;
+                    <a target="_blank" href="mailto:rahulmpc1463@gmail.com"><i class="fa fa-envelope fa-2x " style="color: #be9e21;" aria-hidden="true"></i></a></h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="blog-sec">
+              <div class="blog-img">
+                <a href="">
+                  <img src="img/katto.jpg" class="imgresponsive">
+                </a>
+              </div>
+              <div class="blog-info">
+                <h2>Sandeep Kataria</h2>
+                <div class="blog-comment">
+                  <h5>7049578498</h5>
+                  <h5><a target="_blank" href="https://www.facebook.com/profile.php?id=100006404447697"><i class="fa fa-facebook-square fa-2x " style="color: #be9e21;" aria-hidden="true"></i></a> &nbsp; &nbsp; &nbsp; &nbsp;
+                    <a target="_blank" href="mailto:skataria.2k14@gmail.com"><i class="fa fa-envelope fa-2x " style="color: #be9e21;" aria-hidden="true"></i></a></h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="blog-sec">
+              <div class="blog-img">
+                <a href="">
+                  <img src="img/khushboo1.jpg" class="imgresponsive">
+                </a>
+              </div>
+              <div class="blog-info">
+                <h2>Khushboo Kumari</h2>
+                <div class="blog-comment">
+                  <h5>9407202688</h5>
+                  <h5><a target="_blank" href="https://www.facebook.com/profile.php?id=100006352816909"><i class="fa fa-facebook-square fa-2x " style="color: #be9e21;" aria-hidden="true"></i></a> &nbsp; &nbsp; &nbsp; &nbsp;
+                    <a target="_blank" href="mailto:Khushboo3095@gmail.com"><i class="fa fa-envelope fa-2x " style="color: #be9e21;" aria-hidden="true"></i></a></h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+      <br>
+      <br>
+          <br>
+          <div class="col-md-4 col-md-offset-1 col-sm-6 col-xs-12">
+            <div class="blog-sec">
+              <div class="blog-img">
+                <a href="">
+                  <img src="img/ashish.jpg" class="imgresponsive">
+                </a>
+              </div>
+              <div class="blog-info">
+                <h2>Ashish Chauhan</h2>
+                <div class="blog-comment">
+                  <h5>9407587235</h5>
+                  <h5><a target="_blank" href="https://www.facebook.com/profile.php?id=100000493428280"><i class="fa fa-facebook-square fa-2x " style="color: #be9e21;" aria-hidden="true"></i></a> &nbsp; &nbsp; &nbsp; &nbsp;
+                    <a target="_blank" href="mailto:rahulmpc1463@gmail.com"><i class="fa fa-envelope fa-2x " style="color: #be9e21;" aria-hidden="true"></i></a></h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-md-offset-1 col-sm-6 col-xs-12">
+            <div class="blog-sec">
+              <div class="blog-img">
+                <a href="">
+                  <img src="img/shaheen1.jpg" class="imgresponsive">
+                </a>
+              </div>
+              <div class="blog-info">
+                <h2>Shaheen Ansari</h2>
+                <div class="blog-comment">
+                  <h5>7727925464</h5>
+                  <h5><a target="_blank" href="https://www.facebook.com/shaheen.ansari.965"><i class="fa fa-facebook-square fa-2x " style="color: #be9e21;" aria-hidden="true"></i></a> &nbsp; &nbsp; &nbsp; &nbsp;
+                    <a target="_blank" href="mailto:sheen.shaheen27@gmail.com"><i class="fa fa-envelope fa-2x " style="color: #be9e21;" aria-hidden="true"></i></a></h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <br>
+        <!--
+        ***************************************************
+        -->
+      <!-- EMTs-->
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h2 class="service-title pad-bt15">Event Management Team</h2>
+            <br>
+          </div>
+          <div class="col-md-4 col-md-offset-1 col-sm-6 col-xs-12">
+            <div class="blog-sec">
+              <div class="blog-img">
+                <a href="">
+                  <img src="img/anant.jpg" class="imgresponsive">
+                </a>
+              </div>
+              <div class="blog-info">
+                <h2>Anant Upadhyay</h2>
+                <div class="blog-comment">
+                  <h5>8889795330</h5>
+                  <h5><a target="_blank" href="https://www.facebook.com/anant156"><i class="fa fa-facebook-square fa-2x " style="color: #be9e21;" aria-hidden="true"></i></a> &nbsp; &nbsp; &nbsp; &nbsp;
+                    <a target="_blank" href="mailto:anantupadhyay17@gmail.com"><i class="fa fa-envelope fa-2x " style="color: #be9e21;" aria-hidden="true"></i></a></h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-md-offset-1 col-sm-6 col-xs-12">
+            <div class="blog-sec">
+              <div class="blog-img">
+                <a href="">
+                  <img src="img/aniket.jpg" class="imgresponsive">
+                </a>
+              </div>
+              <div class="blog-info">
+                <h2>Aniket Gupta</h2>
+                <div class="blog-comment">
+                  <h5>8463036924</h5>
+                  <h5><a target="_blank" href="https://www.facebook.com/aniket3167"><i class="fa fa-facebook-square fa-2x " style="color: #be9e21;" aria-hidden="true"></i></a> &nbsp; &nbsp; &nbsp; &nbsp;
+                    <a target="_blank" href="mailto:aniket3167@gmail.com"><i class="fa fa-envelope fa-2x " style="color: #be9e21;" aria-hidden="true"></i></a></h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br><br><br>
+          <div class="col-md-4 col-md-offset-1 col-sm-6 col-xs-12">
+            <div class="blog-sec">
+              <div class="blog-img">
+                <a href="">
+                  <img src="img/bhargavi1.jpg" class="imgresponsive">
+                </a>
+              </div>
+              <div class="blog-info">
+                <h2>Bhargavi Lingala</h2>
+                <div class="blog-comment">
+                  <h5>7697403363</h5>
+                  <h5><a target="_blank" href="https://www.facebook.com/BhargaviLingala"><i class="fa fa-facebook-square fa-2x " style="color: #be9e21;" aria-hidden="true"></i></a> &nbsp; &nbsp; &nbsp; &nbsp;
+                    <a target="_blank" href="mailto:bhargavilingala2013@gmail.com"><i class="fa fa-envelope fa-2x " style="color: #be9e21;" aria-hidden="true"></i></a></h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-md-offset-1 col-sm-6 col-xs-12">
+            <div class="blog-sec">
+              <div class="blog-img">
+                <a href="">
+                  <img src="img/tarun.jpg" class="imgresponsive">
+                </a>
+              </div>
+              <div class="blog-info">
+                <h2>Tarun Gahlot</h2>
+                <div class="blog-comment">
+                  <h5>9424084407</h5>
+                  <h5><a target="_blank" href="https://www.facebook.com/tarun.gahlot.9212"><i class="fa fa-facebook-square fa-2x " style="color: #be9e21;" aria-hidden="true"></i></a> &nbsp; &nbsp; &nbsp; &nbsp;
+                    <a target="_blank" href="mailto:tarungahlot7@gmail.com"><i class="fa fa-envelope fa-2x " style="color: #be9e21;" aria-hidden="true"></i></a></h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        <br>
+        <br>
+        <br>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <h2 class="service-title pad-bt15">Public Relations</h2>
+              <br>
+            </div>
+            <div class="col-md-4 col-md-offset-1 col-sm-6 col-xs-12">
+              <div class="blog-sec">
+                <div class="blog-img">
+                  <a href="">
+                    <img src="img/ashu.jpg" class="imgresponsive">
+                  </a>
+                </div>
+                <div class="blog-info">
+                  <h2>Ashutosh Dwivedi</h2>
+                  <div class="blog-comment">
+                    <h5>7049566293</h5>
+                    <h5><a target="_blank" href="https://www.facebook.com/ashuiiitm"><i class="fa fa-facebook-square fa-2x " style="color: #be9e21;" aria-hidden="true"></i></a> &nbsp; &nbsp; &nbsp; &nbsp;
+                    <a target="_blank" href="mailto:toshi.cricket@gmail.com"><i class="fa fa-envelope fa-2x " style="color: #be9e21;" aria-hidden="true"></i></a></h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-md-offset-1 col-sm-6 col-xs-12">
+              <div class="blog-sec">
+                <div class="blog-img">
+                  <a href="">
+                    <img src="img/somit.jpg" class="imgresponsive">
+                  </a>
+                </div>
+                <div class="blog-info">
+                  <h2>Somit Mittal</h2>
+                  <div class="blog-comment">
+                    <h5>8463036924</h5>
+                    <h5><a target="_blank" href="https://www.facebook.com/somitmittal"><i class="fa fa-facebook-square fa-2x " style="color: #be9e21;" aria-hidden="true"></i></a> &nbsp; &nbsp; &nbsp; &nbsp;
+                    <a target="_blank" href="mailto:rahulmpc1463@gmail.com"><i class="fa fa-envelope fa-2x " style="color: #be9e21;" aria-hidden="true"></i></a></h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+          </div>
+          <br><br>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <h2 class="service-title pad-bt15">Hospitality and Transportation</h2>
+              <br>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+              <div class="blog-sec">
+                <div class="blog-img">
+                  <a href="">
+                    <img src="img/vikas.jpg" class="imgresponsive">
+                  </a>
+                </div>
+                <div class="blog-info">
+                  <h2>Vikas Yadav</h2>
+                  <div class="blog-comment">
+                    <h5>8718863298</h5>
+                    <h5><a target="_blank" href="https://www.facebook.com/viiitmg"><i class="fa fa-facebook-square fa-2x " style="color: #be9e21;" aria-hidden="true"></i></a> &nbsp; &nbsp; &nbsp; &nbsp;
+                    <a target="_blank" href="mailto:rahulmpc1463@gmail.com"><i class="fa fa-envelope fa-2x " style="color: #be9e21;" aria-hidden="true"></i></a></h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+              <div class="blog-sec">
+                <div class="blog-img">
+                  <a href="">
+                    <img src="img/surjeet.jpg" class="imgresponsive">
+                  </a>
+                </div>
+                <div class="blog-info">
+                  <h2>Surjeet Dohare</h2>
+                  <div class="blog-comment">
+                    <h5>7415765271</h5>
+                    <h5><a target="_blank" href="https://www.facebook.com/profile.php?id=100009235974015"><i class="fa fa-facebook-square fa-2x " style="color: #be9e21;" aria-hidden="true"></i></a> &nbsp; &nbsp; &nbsp; &nbsp;
+                    <a target="_blank" href="mailto:rahulmpc1463@gmail.com"><i class="fa fa-envelope fa-2x " style="color: #be9e21;" aria-hidden="true"></i></a></h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="blog-sec">
+              <div class="blog-img">
+                <a href="">
+                  <img src="img/yusra.jpg" class="imgresponsive">
+                </a>
+              </div>
+              <div class="blog-info">
+                <h2>Yusra Qureshi</h2>
+                <div class="blog-comment">
+                  <h5>9179469873</h5>
+                  <h5><a target="_blank" href="https://www.facebook.com/yusra.qureshi.900"><i class="fa fa-facebook-square fa-2x " style="color: #be9e21;" aria-hidden="true"></i></a> &nbsp; &nbsp; &nbsp; &nbsp;
+                    <a target="_blank" href="mailto:yusra.q96@gmail.com"><i class="fa fa-envelope fa-2x " style="color: #be9e21;" aria-hidden="true"></i></a></h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div><br> <br>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="blog-sec">
+              <div class="blog-img">
+                <a href="">
+                  <img src="img/divya1.jpg" class="imgresponsive">
+                </a>
+              </div>
+              <div class="blog-info">
+                <h2>Divya Kumari</h2>
+                <div class="blog-comment">
+                  <h5>8224929720</h5>
+                  <h5><a target="_blank" href="https://www.facebook.com/dkumari9696"><i class="fa fa-facebook-square fa-2x " style="color: #be9e21;" aria-hidden="true"></i></a> &nbsp; &nbsp; &nbsp; &nbsp;
+                    <a target="_blank" href="mailto:divyak1996@gmail.com"><i class="fa fa-envelope fa-2x " style="color: #be9e21;" aria-hidden="true"></i></a></h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="blog-sec">
+              <div class="blog-img">
+                <a href="">
+                  <img src="img/rajput.jpg" class="imgresponsive">
+                </a>
+              </div>
+              <div class="blog-info">
+                <h2>Rahul Rajput</h2>
+                <div class="blog-comment">
+                  <h5>8674949219</h5>
+                  <h5><a target="_blank" href="https://www.facebook.com/rahul.rider.98096"><i class="fa fa-facebook-square fa-2x " style="color: #be9e21;" aria-hidden="true"></i></a> &nbsp; &nbsp; &nbsp; &nbsp;
+                    <a target="_blank" href="mailto:rahulmpc1463@gmail.com"><i class="fa fa-envelope fa-2x " style="color: #be9e21;" aria-hidden="true"></i></a></h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="blog-sec">
+              <div class="blog-img">
+                <a href="">
+                  <img src="img/lodwal.jpg" class="imgresponsive">
+                </a>
+              </div>
+              <div class="blog-info">
+                <h2>Vishal Lodwal</h2>
+                <div class="blog-comment">
+                  <h5>940710848</h5>
+                  <h5><a target="_blank" href="https://www.facebook.com/vishal.lodwal.90"><i class="fa fa-facebook-square fa-2x " style="color: #be9e21;" aria-hidden="true"></i></a> &nbsp; &nbsp; &nbsp; &nbsp;
+                    <a target="_blank" href="mailto:rahulmpc1463@gmail.com"><i class="fa fa-envelope fa-2x " style="color: #be9e21;" aria-hidden="true"></i></a></h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+    </section>
+    <!---->
+    <!--
+    **********************************************************************
+    -->
+     
+    <!---->
+    <section id="contact" class="section-padding wow fadeInUp delay-05s">
+      <div class="container">
+        <div class="col-md-12 text-center white">
+          <h2 class="service-title pad-bt15">Find us At :</h2>
+          <div id="contact-row-4" class="row">
+            <div class="col-sm-1 hidden-sm">&nbsp;</div>
+            <div class="col-12 col-sm-2 with-hover-text">
+              <p><a target="_blank"><i class="fa fa-phone fa-5x" style="color: #be9e21;" aria-hidden="true"></i></a></p>
+              <span class="hover-text font-light ">+91-7049570963</span></a>
+            </div>
+            <!-- /col12 -->
+            <div class="col-12 col-sm-2 with-hover-text">
+              <p><a target="_blank" href=""><i class="fa fa-envelope fa-5x" style="color: #be9e21;"></i></a></p>
+              <span class="hover-text font-light">twaran2k17@gmail.com</span></a>
+            </div>
+            <!-- /col12 -->
+            <div class="col-12 col-sm-2 with-hover-text">
+              <p><a target="_blank" href="https://iiitm.ac.in/"><i class="fa fa-home fa-5x" style="color: #be9e21;"></i></a></p>
+              <span class="hover-text font-light ">ABV-IIITM<br>Gwalior</span></a>
+            </div>
+            <!-- /col12 -->
+            <div class="col-12 col-sm-2 with-hover-text">
+              <p><a target="_blank" href="https://www.facebook.com/twaran.iiitm"><i class="fa fa-facebook  fa-5x" style="color: #be9e21;" aria-hidden="true"></i></a></p>
+              <span class="hover-text font-light ">twaran.iiitm</span></a>
+            </div>
+            <!-- /col12 -->
+            <div class="col-12 col-sm-2 with-hover-text">
+              <p><a target="_blank" href="https://twitter.com/twaran17"><i class="fa fa-twitter fa-5x" style="color: #be9e21;" aria-hidden="true"></i></a></p>
+              <span class="hover-text font-light ">@twaran17</span></a>
+            </div>
+            <!-- /col12 -->
+            <div class="col-sm-1 hidden-sm">&nbsp;</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!---->
+    <!--
+    **********************************************************************
+     -->
+    <!---->
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/wow.js"></script>
+    <script src="js/jquery.bxslider.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="contactform/contactform.js"></script>
+    <script src="js/jquery-1.11.3.min.js" type="text/javascript"></script>
+    
+    <script src="/js/angular.min.js"></script>
+    <script src="js/jssor.slider-22.1.9.mini.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    jQuery(document).ready(function($) {
+
+      var jssor_1_SlideshowTransitions = [{
+        $Duration: 1200,
+        x: 0.3,
+        $During: {
+          $Left: [0.3, 0.7]
+        },
+        $Easing: {
+          $Left: $Jease$.$InCubic,
+          $Opacity: $Jease$.$Linear
+        },
+        $Opacity: 2
+      }, {
+        $Duration: 1200,
+        x: -0.3,
+        $SlideOut: true,
+        $Easing: {
+          $Left: $Jease$.$InCubic,
+          $Opacity: $Jease$.$Linear
+        },
+        $Opacity: 2
+      }, {
+        $Duration: 1200,
+        x: -0.3,
+        $During: {
+          $Left: [0.3, 0.7]
+        },
+        $Easing: {
+          $Left: $Jease$.$InCubic,
+          $Opacity: $Jease$.$Linear
+        },
+        $Opacity: 2
+      }, {
+        $Duration: 1200,
+        x: 0.3,
+        $SlideOut: true,
+        $Easing: {
+          $Left: $Jease$.$InCubic,
+          $Opacity: $Jease$.$Linear
+        },
+        $Opacity: 2
+      }, {
+        $Duration: 1200,
+        y: 0.3,
+        $During: {
+          $Top: [0.3, 0.7]
+        },
+        $Easing: {
+          $Top: $Jease$.$InCubic,
+          $Opacity: $Jease$.$Linear
+        },
+        $Opacity: 2
+      }, {
+        $Duration: 1200,
+        y: -0.3,
+        $SlideOut: true,
+        $Easing: {
+          $Top: $Jease$.$InCubic,
+          $Opacity: $Jease$.$Linear
+        },
+        $Opacity: 2
+      }, {
+        $Duration: 1200,
+        y: -0.3,
+        $During: {
+          $Top: [0.3, 0.7]
+        },
+        $Easing: {
+          $Top: $Jease$.$InCubic,
+          $Opacity: $Jease$.$Linear
+        },
+        $Opacity: 2
+      }, {
+        $Duration: 1200,
+        y: 0.3,
+        $SlideOut: true,
+        $Easing: {
+          $Top: $Jease$.$InCubic,
+          $Opacity: $Jease$.$Linear
+        },
+        $Opacity: 2
+      }, {
+        $Duration: 1200,
+        x: 0.3,
+        $Cols: 2,
+        $During: {
+          $Left: [0.3, 0.7]
+        },
+        $ChessMode: {
+          $Column: 3
+        },
+        $Easing: {
+          $Left: $Jease$.$InCubic,
+          $Opacity: $Jease$.$Linear
+        },
+        $Opacity: 2
+      }, {
+        $Duration: 1200,
+        x: 0.3,
+        $Cols: 2,
+        $SlideOut: true,
+        $ChessMode: {
+          $Column: 3
+        },
+        $Easing: {
+          $Left: $Jease$.$InCubic,
+          $Opacity: $Jease$.$Linear
+        },
+        $Opacity: 2
+      }, {
+        $Duration: 1200,
+        y: 0.3,
+        $Rows: 2,
+        $During: {
+          $Top: [0.3, 0.7]
+        },
+        $ChessMode: {
+          $Row: 12
+        },
+        $Easing: {
+          $Top: $Jease$.$InCubic,
+          $Opacity: $Jease$.$Linear
+        },
+        $Opacity: 2
+      }, {
+        $Duration: 1200,
+        y: 0.3,
+        $Rows: 2,
+        $SlideOut: true,
+        $ChessMode: {
+          $Row: 12
+        },
+        $Easing: {
+          $Top: $Jease$.$InCubic,
+          $Opacity: $Jease$.$Linear
+        },
+        $Opacity: 2
+      }, {
+        $Duration: 1200,
+        y: 0.3,
+        $Cols: 2,
+        $During: {
+          $Top: [0.3, 0.7]
+        },
+        $ChessMode: {
+          $Column: 12
+        },
+        $Easing: {
+          $Top: $Jease$.$InCubic,
+          $Opacity: $Jease$.$Linear
+        },
+        $Opacity: 2
+      }, {
+        $Duration: 1200,
+        y: -0.3,
+        $Cols: 2,
+        $SlideOut: true,
+        $ChessMode: {
+          $Column: 12
+        },
+        $Easing: {
+          $Top: $Jease$.$InCubic,
+          $Opacity: $Jease$.$Linear
+        },
+        $Opacity: 2
+      }, {
+        $Duration: 1200,
+        x: 0.3,
+        $Rows: 2,
+        $During: {
+          $Left: [0.3, 0.7]
+        },
+        $ChessMode: {
+          $Row: 3
+        },
+        $Easing: {
+          $Left: $Jease$.$InCubic,
+          $Opacity: $Jease$.$Linear
+        },
+        $Opacity: 2
+      }, {
+        $Duration: 1200,
+        x: -0.3,
+        $Rows: 2,
+        $SlideOut: true,
+        $ChessMode: {
+          $Row: 3
+        },
+        $Easing: {
+          $Left: $Jease$.$InCubic,
+          $Opacity: $Jease$.$Linear
+        },
+        $Opacity: 2
+      }, {
+        $Duration: 1200,
+        x: 0.3,
+        y: 0.3,
+        $Cols: 2,
+        $Rows: 2,
+        $During: {
+          $Left: [0.3, 0.7],
+          $Top: [0.3, 0.7]
+        },
+        $ChessMode: {
+          $Column: 3,
+          $Row: 12
+        },
+        $Easing: {
+          $Left: $Jease$.$InCubic,
+          $Top: $Jease$.$InCubic,
+          $Opacity: $Jease$.$Linear
+        },
+        $Opacity: 2
+      }, {
+        $Duration: 1200,
+        x: 0.3,
+        y: 0.3,
+        $Cols: 2,
+        $Rows: 2,
+        $During: {
+          $Left: [0.3, 0.7],
+          $Top: [0.3, 0.7]
+        },
+        $SlideOut: true,
+        $ChessMode: {
+          $Column: 3,
+          $Row: 12
+        },
+        $Easing: {
+          $Left: $Jease$.$InCubic,
+          $Top: $Jease$.$InCubic,
+          $Opacity: $Jease$.$Linear
+        },
+        $Opacity: 2
+      }, {
+        $Duration: 1200,
+        $Delay: 20,
+        $Clip: 3,
+        $Assembly: 260,
+        $Easing: {
+          $Clip: $Jease$.$InCubic,
+          $Opacity: $Jease$.$Linear
+        },
+        $Opacity: 2
+      }, {
+        $Duration: 1200,
+        $Delay: 20,
+        $Clip: 3,
+        $SlideOut: true,
+        $Assembly: 260,
+        $Easing: {
+          $Clip: $Jease$.$OutCubic,
+          $Opacity: $Jease$.$Linear
+        },
+        $Opacity: 2
+      }, {
+        $Duration: 1200,
+        $Delay: 20,
+        $Clip: 12,
+        $Assembly: 260,
+        $Easing: {
+          $Clip: $Jease$.$InCubic,
+          $Opacity: $Jease$.$Linear
+        },
+        $Opacity: 2
+      }, {
+        $Duration: 1200,
+        $Delay: 20,
+        $Clip: 12,
+        $SlideOut: true,
+        $Assembly: 260,
+        $Easing: {
+          $Clip: $Jease$.$OutCubic,
+          $Opacity: $Jease$.$Linear
+        },
+        $Opacity: 2
+      }];
+
+      var jssor_1_options = {
+        $AutoPlay: true,
+        $SlideshowOptions: {
+          $Class: $JssorSlideshowRunner$,
+          $Transitions: jssor_1_SlideshowTransitions,
+          $TransitionsOrder: 1
+        },
+        $ArrowNavigatorOptions: {
+          $Class: $JssorArrowNavigator$
+        },
+        $ThumbnailNavigatorOptions: {
+          $Class: $JssorThumbnailNavigator$,
+          $Cols: 10,
+          $SpacingX: 8,
+          $SpacingY: 8,
+          $Align: 360
+        }
+      };
+
+      var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+
+      /*responsive code begin*/
+      /*you can remove responsive code if you don't want the slider scales while window resizing*/
+      function ScaleSlider() {
+        var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
+        if (refSize) {
+          refSize = Math.min(refSize, 800);
+          jssor_1_slider.$ScaleWidth(refSize);
+        } else {
+          window.setTimeout(ScaleSlider, 30);
+        }
+      }
+      ScaleSlider();
+      $(window).bind("load", ScaleSlider);
+      $(window).bind("resize", ScaleSlider);
+      $(window).bind("orientationchange", ScaleSlider);
+      /*responsive code end*/
+    });
+    </script>
+    <script src="/js/app.js"></script>
+    <script>
+        var timer = setTimeout(function() {
+            // window.location='working/index.html'
+            $('#vid').hide();
+            $('#myDiv').show();
+        }, 7000);
+    </script>
+</body>
+
+</html>
