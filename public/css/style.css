@@ -840,3 +840,22 @@ body{
     text-align: center;
 }
 }
+
+
+.modal-content  {
+    -webkit-border-radius: 0px !important;
+    -moz-border-radius: 0px !important;
+    border-radius: 10px !important; 
+}
+
+.modal-header  {
+    -webkit-border-radius: 0px !important;
+    -moz-border-radius: 0px !important;
+    border-radius: 10px !important; 
+}
+
+.modal-footer  {
+    -webkit-border-radius: 0px !important;
+    -moz-border-radius: 0px !important;
+    border-radius: 10px !important; 
+}
